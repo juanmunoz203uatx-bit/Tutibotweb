@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>🌟🤖 TUTIBOT | INFINITE STAR</title>
+
+    <link rel="icon"
+          type="image/png"
+          href="img/WhatsApp Image 2026-09-09 at 11.06.59 AM.jpeg">
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+<!-- ======================================================
+     FONDO DECORATIVO
+====================================================== -->
+
+<div class="background-decoration">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <span class="floating-symbol s1">✦</span>
+    <span class="floating-symbol s2">+</span>
+    <span class="floating-symbol s3">●</span>
+    <span class="floating-symbol s4">✧</span>
+    <span class="floating-symbol s5">∞</span>
+</div>
+
+
+<!-- ======================================================
+     REGISTRO
+====================================================== -->
+
+<section id="registro" class="registro">
+
+    <div class="registro-card">
+
+        <div class="registro-brand">
+
+            <div class="brand-image">
+                <img
+                    src="img/WhatsApp Image 2026-09-09 at 11.06.59 AM.jpeg"
+                    alt="Logo Infinite Star"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback');"
+                >
+
+                <span class="fallback-star">★</span>
+            </div>
+
+            <div class="brand-name">
+                INFINITE STAR
+            </div>
+
+            <div class="brand-line"></div>
+
+            <h1>
+                🌟🤖
+                <br>
+                TUTIBOT
+            </h1>
+
+            <p>
+                Asistente de orientación académica
+                para el aprendizaje en línea.
+            </p>
+
+            <div class="brand-tags">
+
+                <span>📚 Educación</span>
+                <span>💻 LMS</span>
+                <span>🎓 Tutoría</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="registro-content">
+
+            <div class="mini-label">
+                INICIO DEL ASISTENTE
+            </div>
+
+            <h2>
+                ¡Bienvenido a TUTIBOT!
+            </h2>
+
+            <p class="registro-description">
+
+                Selecciona el perfil que utilizarás para
+                recibir una orientación personalizada.
+
+            </p>
+
+
+            <div class="nombre-box">
+
+                <label>
+                    ¿Cómo podemos llamarte?
+                </label>
+
+                <input
+                    id="nombreUsuario"
+                    type="text"
+                    placeholder="Escribe tu nombre"
+                    maxlength="40"
+                >
+
+            </div>
+
+
+            <div class="perfil-title">
+
+                Selecciona tu perfil
+
+            </div>
+
+
+            <div class="perfil-grid">
+
+                <button
+                    class="perfil-card estudiante-card"
+                    onclick="seleccionarPerfil('estudiante')"
+                >
+
+                    <div class="perfil-icon">
+                        🎓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Estudiante
+                        </strong>
+
+                        <small>
+                            Necesito apoyo para aprender,
+                            organizarme y trabajar en Classroom.
+                        </small>
+
+                    </div>
+
+                    <span class="perfil-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="perfil-card docente-card"
+                    onclick="seleccionarPerfil('docente')"
+                >
+
+                    <div class="perfil-icon">
+                        👨‍🏫
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Docente / Tutor
+                        </strong>
+
+                        <small>
+                            Necesito orientación para acompañar
+                            estudiantes y organizar cursos.
+                        </small>
+
+                    </div>
+
+                    <span class="perfil-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <div class="empresa-info">
+
+                <span>★</span>
+
+                <p>
+                    <strong>INFINITE STAR</strong> ofrece
+                    contenido y orientación para trabajar
+                    académicamente en línea mediante
+                    herramientas y plataformas LMS.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================================================
+     CHAT
+====================================================== -->
+
+<main id="chatApp" class="chat-app hidden">
+
+
+    <!-- HEADER -->
+
+    <header class="chat-header">
+
+        <div class="chat-brand">
+
+            <div class="chat-logo">
+
+                <img
+                    src="img/WhatsApp Image 2026-09-09 at 11.06.59 AM.jpeg"
+                    alt="Infinite Star"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('logo-fallback');"
+                >
+
+                <span class="fallback-star">★</span>
+
+            </div>
+
+            <div>
+
+                <h1>
+                    🌟🤖 TUTIBOT
+                </h1>
+
+                <div class="online-status">
+                    <span></span>
+                    En línea · Infinite Star
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="header-buttons">
+
+            <button
+                onclick="abrirManual()"
+                title="Manual de Google Classroom"
+            >
+                📘
+            </button>
+
+            <button
+                onclick="mostrarAyuda()"
+                title="Ayuda"
+            >
+                ?
+            </button>
+
+            <button
+                onclick="reiniciarChat()"
+                title="Nueva conversación"
+            >
+                ↻
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- PERFIL -->
+
+    <div class="profile-strip">
+
+        <div class="profile-info">
+
+            <div
+                id="avatarPerfil"
+                class="profile-avatar"
+            >
+                🎓
+            </div>
+
+            <div>
+
+                <strong id="nombrePerfil">
+                    Usuario
+                </strong>
+
+                <span id="tipoPerfil">
+                    Estudiante
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-actions">
+
+            <span id="perfilBadge">
+                ESTUDIANTE
+            </span>
+
+            <button onclick="cambiarPerfil()">
+                Cambiar perfil
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- INDICADOR DE ÁREA -->
+
+    <div class="chat-topic">
+
+        <div>
+            <span id="topicIcon">🎓</span>
+            <strong id="topicTitle">
+                Orientación para estudiantes
+            </strong>
+        </div>
+
+        <small>
+            Puedes escribir tu duda de diferentes maneras.
+        </small>
+
+    </div>
+
+
+    <!-- MENSAJES -->
+
+    <section
+        id="chatMessages"
+        class="chat-messages"
+    ></section>
+
+
+    <!-- SUGERENCIAS -->
+
+    <div
+        id="sugerencias"
+        class="suggestions"
+    ></div>
+
+
+    <!-- ESCRIBIENDO -->
+
+    <div
+        id="typing"
+        class="typing hidden"
+    >
+
+        <div class="typing-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        TUTIBOT está escribiendo...
+
+    </div>
+
+
+    <!-- INPUT -->
+
+    <footer class="chat-input">
+
+        <button
+            class="emoji-button"
+            onclick="insertarEmoji()"
+            title="Agregar emoji"
+        >
+            😊
+        </button>
+
+        <input
+            id="userInput"
+            type="text"
+            placeholder="Escribe tu pregunta o situación..."
+            autocomplete="off"
+        >
+
+        <button
+            class="send-button"
+            onclick="enviarMensaje()"
+            title="Enviar"
+        >
+            ➤
+        </button>
+
+    </footer>
+
+
+    <div class="chat-footer">
+
+        🌟 INFINITE STAR ·
+        TUTIBOT · Orientación académica en línea
+
+    </div>
+
+</main>
+
+
+
+<!-- ======================================================
+     MODAL AYUDA
+====================================================== -->
+
+<div
+    id="modalAyuda"
+    class="modal hidden"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close-modal"
+            onclick="cerrarModal()"
+        >
+            ×
+        </button>
+
+        <div class="modal-icon">
+            🤖
+        </div>
+
+        <h2>
+            ¿Cómo puedo utilizar TUTIBOT?
+        </h2>
+
+        <p>
+            Puedes escribir preguntas completas,
+            frases cortas o simplemente palabras.
+        </p>
+
+
+        <div class="help-grid">
+
+            <div>
+                🎓
+                <strong>Estudiante</strong>
+                <span>
+                    Classroom, tareas, estudio,
+                    organización y tutoría.
+                </span>
+            </div>
+
+            <div>
+                👨‍🏫
+                <strong>Docente</strong>
+                <span>
+                    Tutoría, LMS, Classroom,
+                    seguimiento y situaciones.
+                </span>
+            </div>
+
+            <div>
+                💬
+                <strong>Pregunta libremente</strong>
+                <span>
+                    Puedes escribir formal o informalmente.
+                </span>
+            </div>
+
+            <div>
+                📘
+                <strong>Manual</strong>
+                <span>
+                    Accede directamente al manual
+                    de Google Classroom.
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ======================================================
+     MODAL MANUAL
+====================================================== -->
+
+<div
+    id="modalManual"
+    class="modal hidden"
+>
+
+    <div class="modal-box manual-box">
+
+        <button
+            class="close-modal"
+            onclick="cerrarManual()"
+        >
+            ×
+        </button>
+
+        <div class="manual-big-icon">
+            📘
+        </div>
+
+        <div class="mini-label">
+            MATERIAL DE APOYO
+        </div>
+
+        <h2>
+            Manual de Google Classroom
+        </h2>
+
+        <p>
+
+            Si eres estudiante y necesitas conocer cómo
+            utilizar Classroom, puedes consultar directamente
+            el manual de apoyo.
+
+        </p>
+
+        <button
+            class="manual-main-button"
+            onclick="abrirPDF()"
+        >
+
+            📖 Abrir manual de estudiante
+
+        </button>
+
+        <small>
+
+            El manual se abrirá en una nueva pestaña.
+
+        </small>
+
+    </div>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

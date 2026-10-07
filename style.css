@@ -1,0 +1,1672 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --blue: #1677ff;
+    --blue-dark: #0754c9;
+
+    --lime: #b9ff18;
+    --purple: #743cff;
+    --purple-dark: #5222b9;
+
+    --white: #ffffff;
+    --background: #f8fbff;
+
+    --text: #172033;
+    --muted: #718096;
+
+    --border: #e4eaf3;
+
+    --shadow:
+        0 25px 70px rgba(38, 63, 105, .16);
+
+}
+
+html,
+body {
+
+    width: 100%;
+    min-height: 100%;
+
+}
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--text);
+
+    background:
+
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(22,119,255,.12),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(116,60,255,.10),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(185,255,24,.09),
+            transparent 30%
+        ),
+
+        var(--background);
+
+    min-height: 100vh;
+
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.background-decoration {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: -1;
+
+}
+
+.orb {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(5px);
+
+    opacity: .22;
+
+}
+
+.orb-1 {
+
+    width: 250px;
+    height: 250px;
+
+    background: var(--blue);
+
+    top: -100px;
+    left: -70px;
+
+}
+
+.orb-2 {
+
+    width: 300px;
+    height: 300px;
+
+    background: var(--purple);
+
+    right: -120px;
+    bottom: -100px;
+
+}
+
+.orb-3 {
+
+    width: 150px;
+    height: 150px;
+
+    background: var(--lime);
+
+    right: 25%;
+    top: 10%;
+
+}
+
+.floating-symbol {
+
+    position: absolute;
+
+    font-size: 35px;
+
+    font-weight: 900;
+
+    opacity: .12;
+
+}
+
+.s1 {
+
+    top: 15%;
+    left: 15%;
+
+    color: var(--blue);
+
+}
+
+.s2 {
+
+    top: 70%;
+    left: 10%;
+
+    color: var(--purple);
+
+}
+
+.s3 {
+
+    top: 30%;
+    right: 10%;
+
+    color: var(--lime);
+
+}
+
+.s4 {
+
+    bottom: 20%;
+    right: 20%;
+
+    color: var(--blue);
+
+}
+
+.s5 {
+
+    top: 50%;
+    left: 50%;
+
+    color: var(--purple);
+
+}
+
+
+/* =====================================================
+   UTILIDADES
+===================================================== */
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+/* =====================================================
+   REGISTRO
+===================================================== */
+
+.registro {
+
+    min-height: 100vh;
+
+    padding: 30px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.registro-card {
+
+    width: min(1100px, 100%);
+
+    min-height: 650px;
+
+    background: rgba(255,255,255,.96);
+
+    border-radius: 32px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+
+    border: 1px solid rgba(22,119,255,.08);
+
+    display: grid;
+
+    grid-template-columns: .9fr 1.1fr;
+
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.registro-brand {
+
+    position: relative;
+
+    padding: 55px;
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #0875f5 0%,
+            #6633d9 75%
+        );
+
+    overflow: hidden;
+
+}
+
+.registro-brand::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 330px;
+
+    height: 330px;
+
+    border-radius: 50%;
+
+    background: var(--lime);
+
+    opacity: .08;
+
+    right: -160px;
+
+    top: -120px;
+
+}
+
+.registro-brand::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 240px;
+
+    height: 240px;
+
+    border-radius: 50%;
+
+    border: 45px solid rgba(255,255,255,.07);
+
+    left: -140px;
+
+    bottom: -130px;
+
+}
+
+.brand-image {
+
+    width: 120px;
+
+    height: 120px;
+
+    border-radius: 30px;
+
+    padding: 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: rgba(255,255,255,.14);
+
+    border: 1px solid rgba(255,255,255,.38);
+
+    backdrop-filter: blur(10px);
+
+    margin-bottom: 22px;
+
+    overflow: hidden;
+
+}
+
+.brand-image img {
+
+    max-width: 100%;
+
+    max-height: 100%;
+
+    object-fit: contain;
+
+}
+
+.fallback-star {
+
+    display: none;
+
+    font-size: 55px;
+
+    color: var(--lime);
+
+}
+
+.logo-fallback .fallback-star {
+
+    display: block;
+
+}
+
+.brand-name {
+
+    font-weight: 800;
+
+    letter-spacing: 5px;
+
+    font-size: 17px;
+
+    color: var(--lime);
+
+}
+
+.brand-line {
+
+    width: 55px;
+
+    height: 4px;
+
+    border-radius: 20px;
+
+    background: var(--lime);
+
+    margin: 15px 0 20px;
+
+}
+
+.registro-brand h1 {
+
+    font-size: 48px;
+
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+
+}
+
+.registro-brand > p {
+
+    max-width: 380px;
+
+    color: rgba(255,255,255,.9);
+
+    line-height: 1.7;
+
+}
+
+.brand-tags {
+
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    margin-top: 25px;
+
+}
+
+.brand-tags span {
+
+    padding: 8px 12px;
+
+    background: rgba(255,255,255,.10);
+
+    border: 1px solid rgba(255,255,255,.18);
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+}
+
+
+/* =====================================================
+   REGISTRO CONTENT
+===================================================== */
+
+.registro-content {
+
+    padding: 55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+.mini-label {
+
+    color: var(--blue);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    font-weight: 900;
+
+    margin-bottom: 9px;
+
+}
+
+.registro-content h2 {
+
+    font-size: 34px;
+
+    margin-bottom: 10px;
+
+}
+
+.registro-description {
+
+    color: var(--muted);
+
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+
+}
+
+.nombre-box {
+
+    margin-bottom: 25px;
+
+}
+
+.nombre-box label {
+
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+}
+
+#nombreUsuario {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border-radius: 14px;
+
+    border: 2px solid var(--border);
+
+    outline: none;
+
+    font-size: 15px;
+
+    transition: .2s;
+
+}
+
+#nombreUsuario:focus {
+
+    border-color: var(--blue);
+
+    box-shadow:
+        0 0 0 4px rgba(22,119,255,.08);
+
+}
+
+.perfil-title {
+
+    font-weight: 800;
+
+    margin-bottom: 12px;
+
+}
+
+.perfil-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+
+}
+
+.perfil-card {
+
+    border: 2px solid var(--border);
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 18px;
+
+    display: grid;
+
+    grid-template-columns: auto 1fr auto;
+
+    align-items: center;
+
+    gap: 12px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    color: var(--text);
+
+    transition: .25s;
+
+}
+
+.perfil-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 30px rgba(30,50,80,.10);
+
+}
+
+.estudiante-card:hover {
+
+    border-color: var(--blue);
+
+}
+
+.docente-card:hover {
+
+    border-color: var(--purple);
+
+}
+
+.perfil-icon {
+
+    font-size: 31px;
+
+}
+
+.perfil-card strong {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+}
+
+.perfil-card small {
+
+    display: block;
+
+    color: var(--muted);
+
+    line-height: 1.35;
+
+    font-size: 11px;
+
+}
+
+.perfil-arrow {
+
+    font-size: 22px;
+
+    color: var(--blue);
+
+}
+
+.empresa-info {
+
+    margin-top: 25px;
+
+    display: flex;
+
+    gap: 10px;
+
+    align-items: flex-start;
+
+    padding: 13px;
+
+    border-radius: 14px;
+
+    background: #f6f9ff;
+
+}
+
+.empresa-info span {
+
+    color: var(--purple);
+
+}
+
+.empresa-info p {
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   CHAT APP
+===================================================== */
+
+.chat-app {
+
+    width: min(1180px, 100%);
+
+    height: 95vh;
+
+    margin: 2.5vh auto;
+
+    background: white;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+
+    flex-direction: column;
+
+    border: 1px solid rgba(22,119,255,.08);
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.chat-header {
+
+    min-height: 78px;
+
+    padding: 12px 22px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    color: white;
+
+    background:
+
+        linear-gradient(
+            110deg,
+            #0875f5,
+            #7139d9
+        );
+
+}
+
+.chat-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+}
+
+.chat-logo {
+
+    width: 50px;
+
+    height: 50px;
+
+    padding: 7px;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,.13);
+
+    border: 1px solid rgba(255,255,255,.32);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+}
+
+.chat-logo img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+}
+
+.chat-brand h1 {
+
+    font-size: 20px;
+
+}
+
+.online-status {
+
+    margin-top: 3px;
+
+    font-size: 11px;
+
+    color: rgba(255,255,255,.85);
+
+}
+
+.online-status span {
+
+    display: inline-block;
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--lime);
+
+    margin-right: 4px;
+
+}
+
+.header-buttons {
+
+    display: flex;
+
+    gap: 7px;
+
+}
+
+.header-buttons button {
+
+    width: 40px;
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    color: white;
+
+    background: rgba(255,255,255,.13);
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    transition: .2s;
+
+}
+
+.header-buttons button:hover {
+
+    background: var(--lime);
+
+    color: #172033;
+
+}
+
+
+/* =====================================================
+   PROFILE STRIP
+===================================================== */
+
+.profile-strip {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 10px 20px;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+.profile-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+}
+
+.profile-avatar {
+
+    width: 35px;
+
+    height: 35px;
+
+    border-radius: 11px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #eef4ff;
+
+}
+
+.profile-info strong {
+
+    display: block;
+
+    font-size: 13px;
+
+}
+
+.profile-info span {
+
+    display: block;
+
+    font-size: 10px;
+
+    color: var(--muted);
+
+}
+
+.profile-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+#perfilBadge {
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    background: #ecf8d3;
+
+    color: #507000;
+
+}
+
+.profile-actions button {
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--blue);
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+/* =====================================================
+   TOPIC
+===================================================== */
+
+.chat-topic {
+
+    padding: 9px 20px;
+
+    background: #fbfcff;
+
+    border-bottom: 1px solid #edf0f5;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+.chat-topic div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 12px;
+
+}
+
+.chat-topic small {
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+}
+
+
+/* =====================================================
+   CHAT MESSAGES
+===================================================== */
+
+.chat-messages {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 25px;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(22,119,255,.035),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(116,60,255,.04),
+            transparent 30%
+        ),
+
+        #fbfcff;
+
+}
+
+.message {
+
+    display: flex;
+
+    margin-bottom: 17px;
+
+    animation: messageIn .25s ease;
+
+}
+
+@keyframes messageIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(8px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+.message.bot {
+
+    justify-content: flex-start;
+
+}
+
+.message.user {
+
+    justify-content: flex-end;
+
+}
+
+.message-content {
+
+    max-width: min(76%, 700px);
+
+}
+
+.bubble {
+
+    padding: 14px 16px;
+
+    border-radius: 18px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+}
+
+.bot .bubble {
+
+    background: white;
+
+    border: 1px solid #e7ecf3;
+
+    border-bottom-left-radius: 5px;
+
+    box-shadow:
+        0 5px 17px rgba(30,50,80,.045);
+
+}
+
+.user .bubble {
+
+    color: white;
+
+    border-bottom-right-radius: 5px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--purple)
+        );
+
+}
+
+.message-time {
+
+    margin: 4px 6px 0;
+
+    color: #929bad;
+
+    font-size: 9px;
+
+}
+
+.user .message-time {
+
+    text-align: right;
+
+}
+
+
+/* =====================================================
+   CHAT CONTENT
+===================================================== */
+
+.bubble ul {
+
+    margin: 8px 0 8px 20px;
+
+}
+
+.bubble li {
+
+    margin-bottom: 3px;
+
+}
+
+.bot-link {
+
+    display: inline-block;
+
+    padding: 9px 13px;
+
+    margin-top: 10px;
+
+    background: var(--lime);
+
+    color: #192500;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-weight: 800;
+
+    font-size: 12px;
+
+}
+
+
+/* =====================================================
+   SUGGESTIONS
+===================================================== */
+
+.suggestions {
+
+    display: flex;
+
+    gap: 8px;
+
+    padding: 9px 18px;
+
+    border-top: 1px solid var(--border);
+
+    background: white;
+
+    overflow-x: auto;
+
+}
+
+.suggestion {
+
+    flex-shrink: 0;
+
+    border: 1px solid #dfe6f0;
+
+    background: white;
+
+    border-radius: 30px;
+
+    padding: 8px 13px;
+
+    color: #526176;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    transition: .2s;
+
+}
+
+.suggestion:hover {
+
+    border-color: var(--blue);
+
+    color: var(--blue);
+
+}
+
+
+/* =====================================================
+   TYPING
+===================================================== */
+
+.typing {
+
+    padding: 6px 22px;
+
+    font-size: 10px;
+
+    color: var(--muted);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+}
+
+.typing-dots {
+
+    display: flex;
+
+    gap: 3px;
+
+}
+
+.typing-dots span {
+
+    width: 5px;
+
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: var(--blue);
+
+    animation: typing 1s infinite;
+
+}
+
+.typing-dots span:nth-child(2) {
+
+    animation-delay: .15s;
+
+}
+
+.typing-dots span:nth-child(3) {
+
+    animation-delay: .30s;
+
+}
+
+@keyframes typing {
+
+    0%,100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-4px);
+
+    }
+
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.chat-input {
+
+    padding: 12px;
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+
+    gap: 8px;
+
+    background: white;
+
+}
+
+#userInput {
+
+    flex: 1;
+
+    border: 2px solid #e4e9f1;
+
+    outline: none;
+
+    border-radius: 17px;
+
+    padding: 13px 15px;
+
+    font-size: 14px;
+
+    transition: .2s;
+
+}
+
+#userInput:focus {
+
+    border-color: var(--blue);
+
+}
+
+.emoji-button,
+.send-button {
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+}
+
+.emoji-button {
+
+    background: #f2f5fa;
+
+}
+
+.send-button {
+
+    background: var(--blue);
+
+    color: white;
+
+}
+
+.send-button:hover {
+
+    background: var(--purple);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.chat-footer {
+
+    padding: 6px;
+
+    text-align: center;
+
+    color: #98a2b3;
+
+    background: white;
+
+    font-size: 9px;
+
+    border-top: 1px solid #f0f2f6;
+
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    background: rgba(8,20,45,.48);
+
+    backdrop-filter: blur(8px);
+
+}
+
+.modal-box {
+
+    position: relative;
+
+    width: min(600px, 100%);
+
+    padding: 38px;
+
+    border-radius: 26px;
+
+    background: white;
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,.22);
+
+}
+
+.close-modal {
+
+    position: absolute;
+
+    right: 18px;
+
+    top: 15px;
+
+    width: 35px;
+
+    height: 35px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #f0f3f8;
+
+    cursor: pointer;
+
+    font-size: 22px;
+
+}
+
+.modal-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 10px;
+
+}
+
+.modal-box h2 {
+
+    margin-bottom: 10px;
+
+}
+
+.modal-box > p {
+
+    color: var(--muted);
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+
+}
+
+.help-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+}
+
+.help-grid div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    background: #f7f9fd;
+
+    font-size: 20px;
+
+}
+
+.help-grid strong {
+
+    font-size: 13px;
+
+}
+
+.help-grid span {
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+}
+
+.manual-box {
+
+    text-align: center;
+
+}
+
+.manual-big-icon {
+
+    font-size: 60px;
+
+}
+
+.manual-main-button {
+
+    border: none;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--purple)
+        );
+
+    color: white;
+
+    padding: 14px 20px;
+
+    border-radius: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    margin: 10px 0;
+
+}
+
+.manual-box small {
+
+    display: block;
+
+    color: var(--muted);
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width: 850px) {
+
+    .registro-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .registro-brand {
+
+        min-height: 400px;
+
+    }
+
+    .registro-content {
+
+        padding: 35px 25px;
+
+    }
+
+}
+
+@media(max-width: 650px) {
+
+    .registro {
+
+        padding: 10px;
+
+    }
+
+    .registro-brand {
+
+        padding: 40px 25px;
+
+    }
+
+    .registro-brand h1 {
+
+        font-size: 38px;
+
+    }
+
+    .perfil-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .chat-app {
+
+        width: 100%;
+
+        height: 100vh;
+
+        margin: 0;
+
+        border-radius: 0;
+
+    }
+
+    .chat-topic small {
+
+        display: none;
+
+    }
+
+    .profile-actions #perfilBadge {
+
+        display: none;
+
+    }
+
+    .message-content {
+
+        max-width: 90%;
+
+    }
+
+    .help-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
